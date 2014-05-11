@@ -12,7 +12,7 @@ exports.create = function ( req, res ) {
             ValidationManager.forCreate( req.body, callback );
         },
         function ( validatedReqBody, callback ) {
-            DataManager.create( validatedReqBody, callback );
+            DataManager.standard.create( validatedReqBody, callback );
         },
         function ( newUser, callback ) {
             OutputManager.forCreate( newUser, callback );
