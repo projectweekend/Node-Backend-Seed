@@ -16,7 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       "apt-get update -qq; apt-get install -q -y --force-yes lxc-docker; " \
       "apt-get install -y npm;" \
       "apt-get install -y python-pip;" \
-      "pip install -U fig;"
+      "pip install -U fig;" \
+      "cd /vagrant && npm install;"
     # Add vagrant user to the docker group
     pkg_cmd << "usermod -a -G docker vagrant; "
     config.vm.provision :shell, :inline => pkg_cmd
