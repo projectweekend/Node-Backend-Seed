@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
-});
+var UserAPI = require( '../api/user' );
+
+/* Map URLs to handlers in this file */
+router.post( '/api/signup', UserAPI.create );
 
 module.exports = router;
