@@ -9,8 +9,8 @@ A good starting point for a restful JSON API that includes:
 
 Before getting started, make sure you have [Vagrant installed](http://www.vagrantup.com/downloads.html).
 
-* Clone this repo: `git clone https://github.com/projectweekend/Node-Backend-Seed.git Your-Directory-Name-Here`
-* Change directory: `cd Your-Directory-Name-Here`
+* Clone this repo: `git clone https://github.com/projectweekend/Node-Backend-Seed.git New-Name`
+* Change directory: `cd New-Name`
 * Launch the Vagrant VM: `vagrant up`
 * SSH into the VM: `vagrant ssh`
 * Change directory into the project root: `cd /vagrant`
