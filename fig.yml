@@ -4,7 +4,7 @@ db:
         - 27017
 web:
     build: .
-    command: node app.js
+    command: node ./bin/www
     volumes:
         - .:/webapp_root
     ports:
