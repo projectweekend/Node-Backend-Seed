@@ -11,7 +11,7 @@ exports.forCreate = function ( data, callback ) {
     if ( !validator.isEmail( data.email ) ) {
         return callback( validationError( "Email address is invalid" ) );
     }
-    DataManager.list( { email: data.email }, function ( err, results ) {
+    DataManager.standard.list( { email: data.email }, function ( err, results ) {
         if ( err ) {
             return callback( systemError( err ) );
         }
