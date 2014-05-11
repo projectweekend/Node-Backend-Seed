@@ -6,6 +6,7 @@ exports.validationError = function ( message ) {
     };
 };
 
+
 exports.systemError = function ( err ) {
     return {
         err: err,
