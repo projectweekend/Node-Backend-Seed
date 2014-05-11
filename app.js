@@ -19,6 +19,7 @@ app.use( express.static( path.join( __dirname, 'public' ) ) );
 app.use( expressJwt( {
     secret: process.env.JWT_SECRET,
     skip: [
+        '/api/signup',
         '/api/authenticate',
         '/api/admin/authenticate'
     ]
