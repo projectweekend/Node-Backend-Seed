@@ -1,4 +1,4 @@
-A good starting point for a restful JSON API that includes:
+A nice starting point for a restful JSON API that includes:
 * No static file serving or server side templating. This project is all about the data.
 * The latest [Express.js](http://expressjs.com/) web application framework (v4.x)
 * Token based authentication using [express-jwt](https://www.npmjs.org/package/express-jwt) middleware
