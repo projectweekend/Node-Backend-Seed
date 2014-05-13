@@ -26,5 +26,5 @@ Before getting started, make sure you have [Vagrant installed](http://www.vagran
 
 * Use the `/routes/index.js` file for mapping route handler functions to URLs. This helps keep `app.js` from getting cluttered.
 * Route handlers, and all the supporting items they require, are defined in `/api`.
-* The `user` module exists as an example. The `/user/index.js` file is where the actual handler function is defined.
+* The `user` module exists as an example. The `/user/index.js` file is where the actual handler functions are defined.
 * Any request validation needed is defined in `/user/validation.js`. Any database access needed is defined in `/user/data.js`. Any manipulation of the database output, prior to sending a response, that is needed is defined in `/user/output.js`.
