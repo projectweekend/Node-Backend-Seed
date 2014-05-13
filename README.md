@@ -22,6 +22,9 @@ Before getting started, make sure you have [Vagrant installed](http://www.vagran
 * The first time you issue the `vagrant up` commmand the base box for the VM will be downloaded and provisioned automatically according to the project's `Vagrantfile`. This may take a little while to complete depending on the speed of your network connection. Subsequent launches using `vagrant up` will run much faster. For more information about other Vagrant commands, [check out the documentation](http://docs.vagrantup.com/v2/cli/index.html).
 * The first time you issue the `fig up` command the base NodeJS and MongoDB containers will be downloaded from the Docker Registry, according to the project's `fig.yml` and `Dockerfile`. This may take a little while to complete depending on the speed of your network connection. Subsequent launches using `fig up` will run much faster. For more information about Fig, [check out the documentation](http://orchardup.github.io/fig/).
 
+### Project Organization Notes
 
-
-
+* Use the `/routes/index.js` file for mapping route handler functions to URLs. This helps keep `app.js` from getting cluttered.
+* Route handlers, and all the supporting items they require, are defined in `/api`.
+* The `user` module exists as an example. The `/user/index.js` file is where the actual handler function is defined.
+* Any request validation needed is defined in `/user/validation.js`. Any database access needed is defined in `/user/data.js`. Any manipulation of the database output, prior to sending a response, that is needed is defined in `/user/output.js`.
