@@ -26,3 +26,7 @@ node_modules
 
 # Vagrant stuff
 .vagrant
+
+# Sublime Project files
+*.sublime-project
+*.sublime-workspace
