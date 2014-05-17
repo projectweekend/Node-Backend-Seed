@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
-				"im",
-				"image_"
+				"re",
+				"req"
 			],
 			[
-				"re",
-				"replace"
+				"val",
+				"validator"
+			],
+			[
+				"rou",
+				"router"
+			],
+			[
+				"jwt",
+				"jwtExpires"
+			],
+			[
+				"user",
+				"userData"
+			],
+			[
+				"im",
+				"image_"
 			],
 			[
 				"is",
@@ -24,20 +40,12 @@
 				"relatedTable"
 			],
 			[
-				"val",
-				"validateRelatedId"
-			],
-			[
 				"roo",
 				"roomsTable"
 			],
 			[
 				"room",
 				"roomsTable"
-			],
-			[
-				"user",
-				"usersTable"
 			],
 			[
 				"er",
@@ -90,10 +98,6 @@
 			[
 				"it",
 				"item"
-			],
-			[
-				"rou",
-				"routesToSkip"
 			],
 			[
 				"auth",
@@ -510,10 +514,6 @@
 			[
 				"IMI",
 				"IMIS_ID"
-			],
-			[
-				"RE",
-				"REG_TRANSACTION_ID"
 			]
 		]
 	},
@@ -652,6 +652,21 @@
 	},
 	"file_history":
 	[
+		"/Users/brian/dev/Node-Backend-Seed/routes/index.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/signup/index.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/user/index.js",
+		"/Users/brian/dev/Node-Backend-Seed/app.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/authenticate/output.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/signup/output.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/signup/data.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/signup/validation.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/authenticate/validation.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/authenticate/index.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/models.js",
+		"/Users/brian/dev/Node-Backend-Seed/Vagrantfile",
+		"/Users/brian/dev/Node-Backend-Seed/fig.yml",
+		"/Users/brian/dev/Node-Backend-Seed/api/utils/index.js",
+		"/Users/brian/dev/Node-Backend-Seed/api/authenticate/data.js",
 		"/Users/brian/vokal/Exelon-Space-Backend/service/shared/room_data.js",
 		"/Users/brian/vokal/Exelon-Space-Backend/service/api/user.js",
 		"/Users/brian/vokal/Exelon-Space-Backend/test/rooms.js",
@@ -764,22 +779,7 @@
 		"/Users/brian/dev/Project-Hermes/validation/User.js",
 		"/Users/brian/dev/Project-Hermes/data/Student.js",
 		"/Users/brian/dev/Project-Hermes/validation/Student.js",
-		"/Users/brian/dev/Project-Hermes/output/Student.js",
-		"/Users/brian/dev/Project-Hermes/output/User.js",
-		"/Users/brian/dev/Project-Hermes/utils/index.js",
-		"/Users/brian/dev/Project-Hermes/data/models.js",
-		"/Users/brian/dev/Sublime-Text-2-Snippets/node-js/node-js-validation-handler.sublime-snippet",
-		"/Users/brian/dev/Project-Hermes/models.js",
-		"/Users/brian/dev/Project-Hermes/routes/adminUserAPI.js",
-		"/Users/brian/dev/Project-Hermes/routes/studentAPI.js",
-		"/Users/brian/dev/Project-Hermes/routes/collegianAPI.js",
-		"/Users/brian/dev/Project-Hermes/routes/userAPI.js",
-		"/Users/brian/dev/Sublime-Text-2-Snippets/angular-js/angular-js-factory-function.sublime-snippet",
-		"/Users/brian/dev/Sublime-Text-2-Snippets/angular-js/angular-js-service-function.sublime-snippet",
-		"/Users/brian/dev/raspberry-pi/Pi-Jukebox/web_app/views/index.jade",
-		"/Users/brian/dev/raspberry-pi/Pi-Jukebox/web_app/public/js/directives.js",
-		"/Users/brian/dev/angular-fully-loaded/angular-fully-loaded.js",
-		"/Users/brian/Library/Application Support/Sublime Text 2/Packages/User/javascript-anon-function.sublime-snippet"
+		"/Users/brian/dev/Project-Hermes/output/Student.js"
 	],
 	"find":
 	{
@@ -813,6 +813,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"create",
+			"UserAPI",
+			"SignupAPI",
+			"        \n",
+			"newUser",
+			"requestBody",
+			"httpStatusCode",
+			"dataForResponse",
+			"outputFromDataManager",
+			"dataManagerInput",
+			"Manager",
+			"data",
+			"dataForResponse",
+			"forAuthenticate",
 			"key",
 			"k",
 			"condition",
@@ -926,21 +940,7 @@
 			"():",
 			"sublime_api",
 			"context",
-			"make",
-			"module_name",
-			"set_module_path",
-			"set_folder_name",
-			"display_module_name",
-			"build_directory_list",
-			"project_folder",
-			"function",
-			"validation",
-			"Validation",
-			"data",
-			"output",
-			"data",
-			"validation",
-			"INSERT"
+			"make"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1047,6 +1047,82 @@
 		"selected_items":
 		[
 			[
+				"route",
+				"routes/index.js"
+			],
+			[
+				"signup",
+				"api/signup/index.js"
+			],
+			[
+				"user",
+				"api/user/index.js"
+			],
+			[
+				"app",
+				"app.js"
+			],
+			[
+				"authout",
+				"api/authenticate/output.js"
+			],
+			[
+				"signout",
+				"api/signup/output.js"
+			],
+			[
+				"inde",
+				"api/signup/index.js"
+			],
+			[
+				"authdata",
+				"api/authenticate/data.js"
+			],
+			[
+				"signdata",
+				"api/signup/data.js"
+			],
+			[
+				"auth",
+				"api/authenticate/validation.js"
+			],
+			[
+				"signval",
+				"api/signup/validation.js"
+			],
+			[
+				"userval",
+				"api/user/validation.js"
+			],
+			[
+				"vag",
+				"Vagrantfile"
+			],
+			[
+				"routes",
+				"routes/index.js"
+			],
+			[
+				"fig",
+				"fig.yml"
+			],
+			[
+				"model",
+				"api/models.js"
+			],
+			[
+				"util",
+				"api/utils/index.js"
+			],
+			[
+				"utilsin",
+				"api/utils/index.js"
+			],
+			[
+				"data",
+				"api/authenticate/data.js"
+			],
+			[
 				"room",
 				"test/rooms.js"
 			],
@@ -1057,14 +1133,6 @@
 			[
 				"utils",
 				"service/shared/utils.js"
-			],
-			[
-				"data",
-				"service/shared/user_data.js"
-			],
-			[
-				"user",
-				"service/api/user.js"
 			],
 			[
 				"read",
@@ -1127,23 +1195,11 @@
 				"service/shared/authenticate_ad.js"
 			],
 			[
-				"util",
-				"service/shared/utils.js"
-			],
-			[
 				"start",
 				"service/extensions/startup.js"
 			],
 			[
-				"authdata",
-				"service/shared/authenticate_data.js"
-			],
-			[
 				"au",
-				"service/api/authenticate.js"
-			],
-			[
-				"auth",
 				"service/api/authenticate.js"
 			],
 			[
@@ -1223,10 +1279,6 @@
 				"public/js/app.js"
 			],
 			[
-				"inde",
-				"views/index.jade"
-			],
-			[
 				"jwtindex",
 				"node_modules/express-jwt/lib/index.js"
 			],
@@ -1237,10 +1289,6 @@
 			[
 				"express-jw",
 				"node_modules/express-jwt/lib/index.js"
-			],
-			[
-				"app",
-				"app.js"
 			],
 			[
 				"data.js",
@@ -1311,16 +1359,8 @@
 				"api/chapter/validation.js"
 			],
 			[
-				"model",
-				"node_modules/mongoose/lib/model.js"
-			],
-			[
 				"deploy",
 				"deploy_static.py"
-			],
-			[
-				"vag",
-				"Vagrantfile"
 			],
 			[
 				"organ",
@@ -1373,10 +1413,6 @@
 			[
 				"st",
 				"stories.md"
-			],
-			[
-				"fig",
-				"fig.yml"
 			],
 			[
 				"schooldata",
@@ -1475,10 +1511,6 @@
 				"package.json"
 			],
 			[
-				"route",
-				"node-js/node-js-route-handler.sublime-snippet"
-			],
-			[
 				"userinde",
 				"api/user/index.js"
 			],
@@ -1525,38 +1557,6 @@
 			[
 				"use",
 				"routes/userAPI.js"
-			],
-			[
-				"api.j",
-				"routes/userAPI.js"
-			],
-			[
-				"fact",
-				"angular-js/angular-js-factory-function.sublime-snippet"
-			],
-			[
-				"control",
-				"web_app/public/js/controllers.js"
-			],
-			[
-				"directives",
-				"web_app/public/js/directives.js"
-			],
-			[
-				"an",
-				"angular-fully-loaded.js"
-			],
-			[
-				"dir",
-				"web_app/public/js/directives.js"
-			],
-			[
-				"coll",
-				"routes/collegianAPI.js"
-			],
-			[
-				"service",
-				"web_app/public/js/services.js"
 			]
 		],
 		"width": 0.0

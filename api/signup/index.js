@@ -1,21 +1,21 @@
 var async = require( 'async' );
-var ValidationManager = require( './validation' );
-var DataManager = require( './data' );
-var OutputManager = require( './output' );
+var Validation = require( './validation' );
+var Data = require( './data' );
+var Output = require( './output' );
 var utils = require( '../utils' );
 
 
-exports.create = function ( req, res ) {
+exports.userSignup = function ( req, res ) {
 
     async.waterfall( [
         function ( callback ) {
-            ValidationManager.forCreate( req.body, callback );
+            Validation.forSignup( req.body, callback );
         },
         function ( validatedReqBody, callback ) {
-            DataManager.standard.create( validatedReqBody, callback );
+            Data.createUser( req.body.email, req.body.password, callback );
         },
         function ( newUser, callback ) {
-            OutputManager.forCreate( newUser, callback );
+            Output.forSignup( newUser, callback );
         }
     ], function ( err, outputData ) {
         if ( err ) {
