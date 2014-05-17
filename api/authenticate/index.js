@@ -5,7 +5,7 @@ var Output = require( './output' );
 var utils = require( '../utils' );
 
 
-exports.authenticate = function ( req, res ) {
+exports.userLogin = function ( req, res ) {
 
     async.waterfall( [
         function ( callback ) {
