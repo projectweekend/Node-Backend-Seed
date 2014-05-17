@@ -14,3 +14,4 @@ web:
     environment:
         PORT: 3000
         JWT_SECRET: SetJwtTokenSecretHere
+        JWT_EXPIRES: 20160
