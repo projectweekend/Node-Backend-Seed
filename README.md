@@ -26,7 +26,9 @@ Before getting started, make sure you have [Vagrant installed](http://www.vagran
 
 * Use the `/routes/index.js` file for mapping route handler functions to URLs. This helps keep `app.js` from getting cluttered.
 * Route handlers, and all the supporting items they require, are defined in `/api`.
-* The `user` module exists as an example. The `/user/index.js` file is where the actual handler functions are defined.
-* Any request validation needed in the `user` module is defined in `/user/validation.js`.
-* Any database access needed in the `user` module is defined in `/user/data.js`.
-* Any manipulation of the database output, prior to sending a response, in the `user` module is defined in `/user/output.js`.
+* Mongoose models are managed in `/api/models.js`
+* Simple *authentication* and *signup* routes are already active in the seed application. These exist as separate modules in `/api` and are also examples of how this type of thing could be organized.
+* Both `authenticate` and `signup` use an `index.js` file to expose the actual route handler functions. These functions combine other elements from the module to make up the entire lifecycle of the request.
+* Any request validation needed in a module is defined in `.../validation.js`.
+* Any database access needed in a module is defined in `.../data.js`.
+* Any manipulation of the database output, prior to sending a response, in a module is defined in `.../output.js`.
