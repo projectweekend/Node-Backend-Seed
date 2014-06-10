@@ -12,6 +12,7 @@ var UserSchema = Schema ( {
         unique: true,
         trim: true
     },
-    password: String
+    password: String,
+    role: String
 } );
 exports.User = mongoose.model( 'User', UserSchema );

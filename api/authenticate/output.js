@@ -8,7 +8,9 @@ var jwtExpires = process.env.JWT_EXPIRES;
 exports.makeToken = function ( user, callback ) {
 
     var token = {
-        id: user._id
+        id: user._id,
+        email: user.email,
+        role: user.role
     };
 
     var output = {
