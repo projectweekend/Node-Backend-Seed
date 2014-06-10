@@ -26,7 +26,8 @@ exports.createUser = function ( email, password, callback ) {
 
     var newUserData = {
         email: email,
-        password: bcrypt.hashSync( password, 8 )
+        password: bcrypt.hashSync( password, 8 ),
+        role: "user"
     };
 
     appModels.User.create( newUserData, function ( err, newUser ) {
