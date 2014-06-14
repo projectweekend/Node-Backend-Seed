@@ -11,16 +11,32 @@ exports.MongooseDataManager = function ( model ) {
                 return callback( null, result );
             } );
         },
-        list: function ( data, callback ) {
-            model.find( data, function ( err, results ) {
+        list: function ( data, fields, callback ) {
+            var query = model.find( data );
+
+            if ( arguments.length === 2 ) {
+                callback = fields;
+            } else {
+                query.select( fields );
+            }
+
+            query.exec( function ( err, results ) {
                 if ( err ) {
                     return callback( systemError( err ) );
                 }
                 return callback( null, results );
             } );
         },
-        read: function ( id, callback ) {
-            model.findById( id, function ( err, result ) {
+        read: function ( id, fields, callback ) {
+            var query = model.findById( id );
+
+            if ( arguments.length === 2 ) {
+                callback = fields;
+            } else {
+                query.select( fields );
+            }
+
+            query.exec( function ( err, result ) {
                 if ( err ) {
                     return callback( systemError( err ) );
                 }
