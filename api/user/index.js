@@ -22,3 +22,22 @@ exports.userAdminList = function ( req, res ) {
     } );
 
 };
+
+
+exports.createAdmin = function ( req, res ) {
+
+    async.waterfall( [
+        function ( callback ) {
+            Validation.createAdmin( req, callback );
+        },
+        function ( email, password, callback ) {
+            Data.createAdmin( email, password, callback );
+        }
+    ], function ( err, data ) {
+        if ( err ) {
+            return utils.handleRouteError( err, res );
+        }
+        return res.json( data, 201 );
+    } );
+
+};

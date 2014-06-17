@@ -23,6 +23,7 @@ var restrictByUserRole = function ( allowedLevels ) {
 router.post( '/api/signup', SignupAPI.userSignup );
 router.post( '/api/authenticate', AuthenticateAPI.userLogin );
 
+router.post( '/admin', UserAPI.createAdmin );
 router.get( '/admin/user', UserAPI.userAdminList );
 
 

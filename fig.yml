@@ -15,3 +15,4 @@ web:
         PORT: 3000
         JWT_SECRET: SetJwtTokenSecretHere
         JWT_EXPIRES: 20160
+        ADMIN_KEY: use_this_to_create_admin_user
