@@ -1,9 +1,7 @@
 var async = require( 'async' );
-var Validation = require( './validation' );
 var Data = require( './data' );
 var Output = require( './output' );
 var utils = require( '../utils' );
-var validationError = require( '../utils/error_messages' ).validationError;
 
 
 exports.userSignup = function ( req, res ) {
