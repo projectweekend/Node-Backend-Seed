@@ -1,4 +1,4 @@
-var systemError = require( '../utils' ).systemError;
+var systemError = require( '../utils/error_messages' ).systemError;
 
 
 exports.MongooseDataManager = function ( model ) {
