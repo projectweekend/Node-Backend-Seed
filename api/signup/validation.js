@@ -1,7 +1,6 @@
 var validator = require( 'validator' );
 var Data = require( './data' );
-var utils = require( '../utils' );
-var validationError = require( '../utils' ).validationError;
+var validationError = require( '../utils/error_messages' ).validationError;
 
 
 exports.forSignup = function ( requestBody, callback ) {

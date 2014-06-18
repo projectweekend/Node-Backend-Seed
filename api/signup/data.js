@@ -1,6 +1,6 @@
 var bcrypt = require( 'bcrypt' );
 var appModels = require( '../models' );
-var systemError = require( '../utils' ).systemError;
+var systemError = require( '../utils/error_messages' ).systemError;
 
 
 exports.isEmailInUse = function ( email, callback ) {
