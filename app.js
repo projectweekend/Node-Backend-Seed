@@ -4,6 +4,7 @@ var logger = require( 'morgan' );
 var bodyParser = require( 'body-parser' );
 var mongoose = require( 'mongoose' );
 var expressJwt = require( 'express-jwt' );
+var expressValidator = require( 'express-validator' );
 
 
 var routes = require( './routes/index' );
@@ -14,6 +15,7 @@ var app = express();
 app.use( logger( 'dev' ) );
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded() );
+app.use( expressValidator() );
 app.use( express.static( path.join( __dirname, 'public' ) ) );
 app.use( expressJwt( {
     secret: process.env.JWT_SECRET,
