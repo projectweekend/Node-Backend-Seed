@@ -17,7 +17,8 @@
     "morgan": "~1.0.0",
     "validator": "^3.12.0",
     "jsonwebtoken": "~0.4.0",
-    "prompt": "~0.2.13"
+    "prompt": "~0.2.13",
+    "express-validator": "~2.3.0"
   },
   "devDependencies": {
     "chai": "^1.9.1",
