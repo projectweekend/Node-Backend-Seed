@@ -1,7 +1,7 @@
 var bcrypt = require( 'bcrypt' );
 var appModels = require( '../models' );
 var MongooseDataManager = require( '../utils/data_manager' ).MongooseDataManager;
-var systemError = require( '../utils' ).systemError;
+var systemError = require( '../utils/error_messages' ).systemError;
 
 
 exports.standard = MongooseDataManager( appModels.User );
