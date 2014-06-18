@@ -13,6 +13,9 @@ exports.userSignup = function ( req, res ) {
         },
         function ( validatedReqBody, callback ) {
             Data.createUser( req.body.email, req.body.password, callback );
+        },
+        function ( newUserData, callback ) {
+            Output.forSignup( newUserData, callback );
         }
     ], function ( err, outputData ) {
         if ( err ) {
