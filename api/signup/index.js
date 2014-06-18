@@ -1,12 +1,13 @@
 var async = require( 'async' );
 var Data = require( './data' );
 var Output = require( './output' );
-var utils = require( '../utils' );
+var handleRouteError = require( '../utils' ).handleRouteError;
 
 
 exports.userSignup = function ( req, res ) {
 
     async.waterfall( [
+        // Perform request validation here
         function ( callback ) {
 
             req.checkBody( 'email', "Must be an email address" ).isEmail();
@@ -19,19 +20,21 @@ exports.userSignup = function ( req, res ) {
             return callback( null, req.body );
 
         },
+        // Perform any database actions with validated data here
         function ( requestBody, callback ) {
 
-            Data.createUser( req.body.email, req.body.password, callback );
+            Data.createUser( requestBody.email, requestBody.password, callback );
 
         },
+        // Perform any final manipulation of data before sending to response
         function ( newUserData, callback ) {
 
-            Output.forSignup( newUserData, callback );
+            Output.buildResponse( newUserData, callback );
 
         }
     ], function ( err, outputData ) {
         if ( err ) {
-            return utils.handleRouteError( err, res );
+            return handleRouteError( err, res );
         }
         return res.json( outputData, 201 );
     } );

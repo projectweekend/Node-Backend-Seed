@@ -1,20 +1,10 @@
-var jwt = require( 'jsonwebtoken' );
+var makeToken = require( '../utils/authentication' ).makeToken;
 
 
-var jwtSecret = process.env.JWT_SECRET;
-var jwtExpires = process.env.JWT_EXPIRES;
-
-
-exports.forSignup = function ( user, callback ) {
-
-    var token = {
-        id: user._id,
-        email: user.email,
-        role: user.role
-    };
+exports.buildResponse = function ( user, callback ) {
 
     var output = {
-        token: jwt.sign( token, jwtSecret, { expiresInMinutes: jwtExpires } )
+        token: makeToken( user )
     };
 
     return callback( null, output );
