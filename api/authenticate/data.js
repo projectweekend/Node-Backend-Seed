@@ -1,7 +1,7 @@
 var bcrypt = require('bcrypt');
 var appModels = require( '../models' );
-var systemError = require( '../utils' ).systemError;
-var authorizationError = require( '../utils' ).authorizationError;
+var systemError = require( '../utils/error_messages' ).systemError;
+var authorizationError = require( '../utils/error_messages' ).authorizationError;
 
 
 exports.verifyCredentials = function ( email, password, callback ) {

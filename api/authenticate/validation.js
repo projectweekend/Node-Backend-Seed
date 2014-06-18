@@ -1,5 +1,5 @@
 var validator = require( 'validator' );
-var validationError = require( '../utils' ).validationError;
+var validationError = require( '../utils/error_messages' ).validationError;
 
 
 exports.forAuthenticate = function ( requestBody, callback ) {
