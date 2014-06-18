@@ -29,7 +29,7 @@ exports.userSignup = function ( req, res ) {
         // Perform any final manipulation of data before sending to response
         function ( newUserData, callback ) {
 
-            Output.buildResponse( newUserData, callback );
+            Output.buildResponseWithToken( newUserData, callback );
 
         }
     ], function ( err, outputData ) {
