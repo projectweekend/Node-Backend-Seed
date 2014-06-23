@@ -1,5 +1,4 @@
 var async = require( 'async' );
-var Validation = require( './validation' );
 var Data = require( './data' );
 var Output = require( './output' );
 var handleRouteError = require( '../utils' ).handleRouteError;
@@ -11,7 +10,7 @@ exports.userAdminList = function ( req, res ) {
         // Perform request validation here
         function ( callback ) {
 
-            Validation.forAdminList( req.query, callback );
+            return callback( null, req.query );
 
         },
         // Perform any database actions with validated data here
