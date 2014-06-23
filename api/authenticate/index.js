@@ -1,26 +1,41 @@
 var async = require( 'async' );
-var Validation = require( './validation' );
 var Data = require( './data' );
 var Output = require( './output' );
-var utils = require( '../utils' );
+var handleRouteError = require( '../utils' ).handleRouteError;
 
 
 exports.userLogin = function ( req, res ) {
 
     async.waterfall( [
+        // Perform request validation here
         function ( callback ) {
-            Validation.forAuthenticate( req.body, callback );
+
+            req.checkBody( 'email', "Must be an email address" ).isEmail();
+            req.checkBody( 'password', "Field is required" ).notEmpty();
+
+            var errors = req.validationErrors();
+            if ( errors ) {
+                return callback( errors );
+            }
+            return callback( null, req.body );
+
         },
-        function ( validatedRequest, callback ) {
-            Data.verifyCredentials( req.body.email, req.body.password, callback );
+        // Perform any database actions with validated data here
+        function ( requestBody, callback ) {
+
+            Data.verifyCredentials( requestBody.email, requestBody.password, callback );
+
         },
+        // Perform any final manipulation of data before sending to response
         function ( userData, callback ) {
+
             Output.makeToken( userData, callback );
+
         }
     ],
     function ( err, output ) {
         if ( err ) {
-            return utils.handleRouteError( err, res );
+            return handleRouteError( err, res );
         }
         return res.json( output, 200 );
     } );
