@@ -2,7 +2,7 @@ exports.conflictError = function ( message ) {
     return {
         err: null,
         type: 'conflict',
-        message: message
+        msg: message
     };
 };
 
@@ -11,7 +11,7 @@ exports.systemError = function ( err ) {
     return {
         err: err,
         type: 'system',
-        message: "A system error occurred"
+        msg: "A system error occurred"
     };
 };
 
@@ -20,6 +20,6 @@ exports.authorizationError = function ( message ) {
     return {
         err: null,
         type: 'authorization',
-        message: message
+        msg: message
     };
 };
