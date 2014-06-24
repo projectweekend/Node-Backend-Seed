@@ -1,6 +1,5 @@
 exports.conflictError = function ( message ) {
     return {
-        err: null,
         type: 'conflict',
         msg: message
     };
@@ -18,7 +17,6 @@ exports.systemError = function ( err ) {
 
 exports.authorizationError = function ( message ) {
     return {
-        err: null,
         type: 'authorization',
         msg: message
     };

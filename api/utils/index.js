@@ -1,17 +1,19 @@
 exports.handleRouteError = function ( err, res ) {
 
+    var code = 400;
     if ( err.type === 'authorization' ) {
-        return res.json( err, 401 );
+        code = 401;
     }
 
     if ( err.type === 'conflict' ) {
-        return res.json( err, 409 );
+        code = 409;
     }
 
     if ( err.type === 'system' ) {
-        return res.json( err, 500 );
+        code = 500;
     }
+    delete err.type;
 
-    return res.json( err, 400 );
+    return res.json( err, code );
 
 };
