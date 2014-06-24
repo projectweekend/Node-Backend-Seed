@@ -1,3 +1,12 @@
+exports.conflictError = function ( message ) {
+    return {
+        err: null,
+        type: 'conflict',
+        message: message
+    };
+};
+
+
 exports.systemError = function ( err ) {
     return {
         err: err,
