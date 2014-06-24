@@ -4,25 +4,6 @@ var systemError = require( '../utils/error_messages' ).systemError;
 var conflictError = require( '../utils/error_messages' ).conflictError;
 
 
-exports.isEmailInUse = function ( email, callback ) {
-
-    appModels.User.findOne( { email: email }, function ( err, user ) {
-
-        if ( err ) {
-            return callback( systemError( err ) );
-        }
-
-        if ( user ) {
-            return callback( null, true );
-        }
-
-        return callback( null, false );
-
-    } );
-
-};
-
-
 exports.createUser = function ( email, password, callback ) {
 
     var newUserData = {
