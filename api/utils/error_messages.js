@@ -1,12 +1,3 @@
-exports.validationError = function ( message ) {
-    return {
-        err: null,
-        type: 'validation',
-        message: message
-    };
-};
-
-
 exports.systemError = function ( err ) {
     return {
         err: err,
