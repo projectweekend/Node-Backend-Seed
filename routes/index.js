@@ -1,12 +1,9 @@
 var express = require('express');
 var router = express.Router();
-
-var SignupAPI = require( '../api/signup' );
-var AuthenticateAPI = require( '../api/authenticate' );
-var UserAPI = require( '../api/user' );
+var User = require( '../api/user/controllers' );
 
 
-var restrictByUserRole = function ( allowedLevels ) {
+var roleRequired = function ( allowedLevels ) {
     return function ( req, res, next ) {
         if ( allowedLevels.indexOf( req.user.role ) > -1 ) {
             next();
@@ -20,11 +17,9 @@ var restrictByUserRole = function ( allowedLevels ) {
 
 
 /* Map URLs to handlers in this file */
-router.post( '/api/signup', SignupAPI.userSignup );
-router.post( '/api/authenticate', AuthenticateAPI.userLogin );
-
-router.post( '/admin', UserAPI.createAdmin );
-router.get( '/admin/user', UserAPI.userAdminList );
+router.post( '/api/signup', User.signup );
+router.post( '/api/authenticate', User.authenticate );
+router.post( '/admin', User.createAdmin );
 
 
 module.exports = router;
