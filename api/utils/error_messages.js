@@ -1,23 +1,22 @@
 exports.conflictError = function ( message ) {
     return {
-        type: 'conflict',
-        msg: message
+        msg: message,
+        code: 409
     };
 };
 
 
-exports.systemError = function ( err ) {
+exports.systemError = function () {
     return {
-        err: err,
-        type: 'system',
-        msg: "A system error occurred"
+        msg: "A system error occurred",
+        code: 500
     };
 };
 
 
 exports.authorizationError = function ( message ) {
     return {
-        type: 'authorization',
-        msg: message
+        msg: message,
+        code: 401
     };
 };
