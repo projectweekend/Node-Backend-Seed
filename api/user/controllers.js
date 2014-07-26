@@ -1,7 +1,7 @@
 var async = require( 'async' );
 var User = require( './models' ).User;
 var handleRouteError = require( '../utils' ).handleRouteError;
-var validationError = require( '../utils' ).validationError;
+var validationError = require( '../utils/error_messages' ).validationError;
 var makeToken = require( '../utils/authentication' ).makeToken;
 
 
