@@ -1,5 +1,6 @@
 exports.conflictError = function ( message ) {
     return {
+        type: "custom",
         msg: message,
         code: 409
     };
@@ -8,6 +9,7 @@ exports.conflictError = function ( message ) {
 
 exports.systemError = function () {
     return {
+        type: "custom",
         msg: "A system error occurred",
         code: 500
     };
@@ -16,7 +18,17 @@ exports.systemError = function () {
 
 exports.authorizationError = function ( message ) {
     return {
+        type: "custom",
         msg: message,
         code: 401
+    };
+};
+
+
+exports.validationError = function ( errors ) {
+    return {
+        type: "custom",
+        messages: errors,
+        code: 400
     };
 };

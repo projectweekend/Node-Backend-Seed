@@ -1,6 +1,7 @@
 var async = require( 'async' );
 var User = require( './models' ).User;
 var handleRouteError = require( '../utils' ).handleRouteError;
+var validationError = require( '../utils' ).validationError;
 var makeToken = require( '../utils/authentication' ).makeToken;
 
 
@@ -13,7 +14,7 @@ exports.signup = function ( req, res ) {
 
         var errors = req.validationErrors();
         if ( errors ) {
-            return callback( errors );
+            return callback( validationError( errors ) );
         }
 
         return callback( null, {
@@ -62,7 +63,7 @@ exports.createAdmin = function ( req, res ) {
         }
 
         if ( errors ) {
-            return callback( errors );
+            return callback( validationError( errors ) );
         }
 
         return callback( null, {
@@ -100,7 +101,7 @@ exports.authenticate = function ( req, res ) {
 
         var errors = req.validationErrors();
         if ( errors ) {
-            return callback( errors );
+            return callback( validationError( errors ) );
         }
 
         return callback( null, {
