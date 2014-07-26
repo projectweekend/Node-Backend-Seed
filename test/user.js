@@ -1,6 +1,10 @@
+var Chance = require('chance');
 var expect = require( 'chai' ).expect;
 var supertest = require( 'supertest' );
 var api = supertest( 'http://192.168.13.81:3000' );
+var chance = new Chance();
+
+var claimedEmail;
 
 
 describe( 'user signup', function () {
@@ -12,7 +16,7 @@ describe( 'user signup', function () {
             api.post( '/api/signup' )
                 .set( 'Content-Type', 'application/json' )
                 .send( {
-                    email: "test@test.com",
+                    email: chance.email(),
                     password: "123456"
                 } )
                 .expect( 201 )
@@ -25,6 +29,8 @@ describe( 'user signup', function () {
                     expect( res.body ).to.have.a.property( '_id' );
                     expect( res.body ).to.have.a.property( 'email' );
                     expect( res.body ).to.have.a.property( 'password' );
+
+                    claimedEmail = res.body.email;
 
                     done();
 
@@ -89,7 +95,7 @@ describe( 'user signup', function () {
             api.post( '/api/signup' )
                 .set( 'Content-Type', 'application/json' )
                 .send( {
-                    email: "test@test.com",
+                    email: claimedEmail,
                     password: "123456"
                 } )
                 .expect( 409 )
