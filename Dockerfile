@@ -1,7 +1,8 @@
 FROM dockerfile/nodejs
 
-RUN mkdir /webapp_root
-ADD . /webapp_root/
-WORKDIR /webapp_root
+COPY . /src
+RUN cd /src; npm install
+ADD . /src
+WORKDIR /src
 
 EXPOSE 3000
