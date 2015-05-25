@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs
+FROM node:0.10
 
 COPY . /src
 RUN cd /src; npm install
